@@ -2,9 +2,9 @@ package command;
 
 public class Main {
     public static void main(String[] args){
-        var service = new CustomerService();
-        var command = new AddCustomerCommand(service);
-        var button = new Button(command);
-        button.click();
+       var compositeCommand = new CompositeCommand();
+       compositeCommand.addCommand(new ResizeCommand());
+       compositeCommand.addCommand(new BlackAndWhiteCommand());
+       compositeCommand.execute();
     }
 }
