@@ -3,7 +3,7 @@ package iterator;
 
 public class BrowserHistory {
 
-    private String[] urls = new String[4];
+    private  final String[] urls = new String[4];
     private int index = 0;
 
 
@@ -23,7 +23,7 @@ public class BrowserHistory {
 
     private class ArrayIterator implements Iterator{
 
-        private BrowserHistory history;
+        private final  BrowserHistory history;
         private int index;
 
         public ArrayIterator(BrowserHistory history) {
