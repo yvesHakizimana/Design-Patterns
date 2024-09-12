@@ -9,6 +9,8 @@ public class Main {
         dataSource.addObserver(spreadSheet);
         dataSource.addObserver(sheet);
 
-        dataSource.notifyObservers();
+        dataSource.setValue(10);
+
+        dataSource.notifyObservers(dataSource.getValue());
     }
 }
