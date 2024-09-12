@@ -3,8 +3,8 @@ package observer;
 public class Main {
     public static void main(String[] args){
         var dataSource = new DataSource();
-        var spreadSheet = new SpreadSheet();
-        var sheet = new Sheet();
+        var spreadSheet = new SpreadSheet(dataSource);
+        var sheet = new Sheet(dataSource);
 
         dataSource.addObserver(spreadSheet);
         dataSource.addObserver(sheet);
