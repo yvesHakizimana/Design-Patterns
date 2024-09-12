@@ -1,25 +1,23 @@
 package mediator;
 
-public class ArticleDialogBox extends DialogBox{
+public class ArticleDialogBox{
 
-    private TextBox textBox = new TextBox(this);
-    private Button saverButton = new Button(this);
-    private ListBox listBox = new ListBox(this);
+    private TextBox textBox = new TextBox();
+    private Button saverButton = new Button();
+    private ListBox listBox = new ListBox();
+
+
+    public ArticleDialogBox(){
+        listBox.addEventHandler(this::setSelection);
+        textBox.addEventHandler(this::titleSelected);
+    }
 
     public void simulateUserInteraction(){
         listBox.setSelection("Mediator pattern selected");
         textBox.setTitle("");
+        listBox.setSelection("using the observer pattern in notifying the dialog box.");
         System.out.println("Text Box Content: " + textBox.getTitle());
         System.out.println("Save Button Content: " + saverButton.isEnabled());
-    }
-
-    @Override
-    void changed(UIControl control) {
-        if(control == listBox)
-            setSelection();
-        if(control == textBox)
-            titleSelected();
-
     }
 
     private void setSelection(){

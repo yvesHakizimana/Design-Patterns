@@ -1,9 +1,6 @@
 package mediator;
 
 public class ListBox extends UIControl {
-    public ListBox(DialogBox owner) {
-        super(owner);
-    }
 
     private String selection;
 
@@ -13,6 +10,6 @@ public class ListBox extends UIControl {
 
     public void setSelection(String selection) {
         this.selection = selection;
-        owner.changed(this);
+        notifyEventHandlers();
     }
 }
